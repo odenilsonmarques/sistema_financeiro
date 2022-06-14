@@ -32,7 +32,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 offset-md-3 mt-4">
-                    <input type="text" name="description" class="form-control" placeholder="DESCRIÇÃO" required>
+                    <input type="text" name="description" class="form-control" placeholder="DESCRIÇÃO" maxlegth="30" required>
                 </div>
             </div>
             <div class="row">
