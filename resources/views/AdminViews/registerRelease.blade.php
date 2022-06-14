@@ -8,8 +8,8 @@
             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
             <div class="row mt-4">
                 <div class="col-sm-6 offset-md-3">
-                    <select class="form-select" name="release_type" id="" required>
-                        <option selected disabled>Selecione</option>
+                    <select name="release_type" id="" class="form-select" required>
+                        <option value="">SELECIONE O TIPO DE LANÇAMENTO</option>
                         <option value="RECEITA">RECEITA</option>
                         <option value="DESPESA">DESPESA</option>
                     </select>
@@ -17,12 +17,12 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 offset-md-3 mt-4">
-                    <input type="text" name="person" class="form-control" placeholder="Informe a pessoa" required>
+                    <input type="text" name="person" class="form-control" placeholder="INFORME A PESSOA" maxlength="30" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-6 offset-md-3 mt-4">
-                    <input type="text" name="amount" class="form-control" placeholder="Valor" required>
+                    <input type="text" name="amount" class="form-control" onKeyPress="return(currencyFormat(this,'','.',event))"  placeholder="INFORME O VALOR" required>
                 </div>
             </div>
             <div class="row">
@@ -32,7 +32,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 offset-md-3 mt-4">
-                    <input type="text" name="description" class="form-control" placeholder="Descrição" required>
+                    <input type="text" name="description" class="form-control" placeholder="DESCRIÇÃO" required>
                 </div>
             </div>
             <div class="row">

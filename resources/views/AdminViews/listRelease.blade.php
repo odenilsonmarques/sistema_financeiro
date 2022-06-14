@@ -11,6 +11,7 @@
                         <th>LANÇAMENTO</th>
                         <th>PESSOA</th>
                         <th>VALOR</th>
+                        <th>DATA DO LANÇAMENTO</th>
                         <th>DESCRIÇÃO</th>
                     </tr>
                 </thead>
@@ -22,7 +23,7 @@
                         <!-- <td>{{$release->due_date}}</td> -->
 
                         <td>{{\Carbon\Carbon::parse($release->due_date)->format('d/m/Y')}}</td>
-
+                        <td>{{$release->description}}</td>
                         
 
                         
