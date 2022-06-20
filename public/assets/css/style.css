@@ -5,28 +5,29 @@ body
 }
 .navbar a, .navbar-brand
 {
-    color: #F0BB62;
+
     font-size: 19px;
     margin-top: 12px;
 }
 .navbar a.navbar-brand 
 {
-    color: #F0BB62;
+    color: #FFFFFF;
     font-weight: bold;   
 }
 .navbar a.navbar-brand:hover
 {
-    color: #F4EEA9;
+    color: #8E05C2;
 }
 .navbar-expand-sm .navbar-nav > li > a {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 12px;
+    font-weight: bold;   
 }
 .navbar-expand-sm .navbar-nav .nav-link{
-    color: #F0BB62;
+    color: #FFFFFF;
 }
 .navbar-expand-sm .navbar-nav .nav-link:hover{
-    color: #F4EEA9;
+    color: #8E05C2;
     text-decoration: underline;
 }
 .dropdown-menu .dropdown-item{

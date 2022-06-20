@@ -10,16 +10,27 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <ul class="nav justify-content-end navbar-secondary">
-                <li class="nav-item">
-                    
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sair</a>
-                </li>
-            </ul>
-        </div><br>
+        <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#3E065F">
+            <div class="container">
+                <a class="navbar-brand" href="{{route('inicio.homePage')}}">FINANCEIRO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <nav class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('inicio.homePage')}}">INÍCIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('lancamentos.list')}}">LANÇAMENTOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('cadastro.addAction')}}">NOVO LANÇAMENTO</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
     </header>
 
     <article>

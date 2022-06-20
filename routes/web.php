@@ -20,8 +20,10 @@ Route::get('/teste',function(){
 
 });
 
-Route::get('/listReleases','AdminController\ReleasesController@listRelease')->name('listReleses.listRelease');
+Route::get('/inicio','AdminController\HomeController@homePage')->name('inicio.homePage');
 
-Route::get('/registerRelease','AdminController\ReleasesController@registerRelease');
+Route::get('/lancamentos','AdminController\ReleasesController@listAction')->name('lancamentos.list');
 
-Route::post('/registerRelease','AdminController\ReleasesController@registerReleaseAction')->name('registerRelease.registerReleaseAction');
+Route::get('/cadastro','AdminController\ReleasesController@add');
+
+Route::post('/cadastro','AdminController\ReleasesController@addAction')->name('cadastro.addAction');
