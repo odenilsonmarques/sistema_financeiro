@@ -13,7 +13,6 @@
                         <option value="">----Selecione----</option>
                         <option value="DESPESA">DESPESA</option>
                         <option value="RECEITA">RECEITA</option>
-                       
                     </select>
                 </div>
             </div>
