@@ -27,3 +27,5 @@ Route::get('/lancamentos','AdminController\ReleasesController@listAction')->name
 Route::get('/cadastro','AdminController\ReleasesController@add');
 
 Route::post('/cadastro','AdminController\ReleasesController@addAction')->name('cadastro.addAction');
+
+Route::get('/excluir/{id}','AdminController\ReleasesController@delete')->name('excluir.delete');

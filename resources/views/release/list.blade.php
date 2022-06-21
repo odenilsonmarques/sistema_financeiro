@@ -20,6 +20,7 @@
                         <th>VALOR</th>
                         <th>DATA</th>
                         <th>DESCRIÇÃO</th>
+                        <th>AÇÕES</th>
                     </tr>
                 </thead>
                 @foreach($releases as $release)
@@ -31,6 +32,11 @@
                                 <td>{{number_format($release->amount),2,',','.'}}</td>
                                 <td>{{\Carbon\Carbon::parse($release->due_date)->format('d/m/Y')}}</td>
                                 <td>{{$release->description}}</td>
+                                <td>
+                                    <a href="" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{{route('excluir.delete',[$release->id])}}" class="btn btn-danger btn-sm">Excluir</a>
+                                   
+                                </td>
                             </tr>
                      <?php }else{ ?>
                             <tr>
@@ -39,6 +45,10 @@
                                 <td>{{number_format($release->amount),2,',','.'}}</td>
                                 <td>{{\Carbon\Carbon::parse($release->due_date)->format('d/m/Y')}}</td>
                                 <td>{{$release->description}}</td>
+                                <td>
+                                    <a href="" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{{route('excluir.delete',[$release->id])}}" class="btn btn-danger btn-sm">Excluir</a>
+                                </td>
                             </tr>
                     <?php }
                     ?>

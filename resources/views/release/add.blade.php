@@ -8,6 +8,12 @@
             @csrf<!--csrf toquem de segurnça padrao do laravel para envio de requisao-->
             <div class="row mt-4">
                 <div class="col-sm-6 offset-md-3">
+                    @if(session('messageError'))
+                        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                            <strong>{{session('messageError')}}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
                     <label for="release_type">Tipo de Lançamento</label>
                     <select name="release_type" id="" class="form-select" required autofocus>
                         <option value="">----Selecione----</option>
