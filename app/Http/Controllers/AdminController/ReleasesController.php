@@ -8,11 +8,13 @@ use App\Release;
 
 class ReleasesController extends Controller
 {
-    public function add(){
+    public function add()
+    {
         return view('release.add');
     }
     //method for register the releases
-    public function addAction(Request $request){
+    public function addAction(Request $request)
+    {
         //debugando os valores recebidos
         // dd($request->all());
         //debugando valores especificos
@@ -27,9 +29,26 @@ class ReleasesController extends Controller
         ->with('messageRegister', 'Lançamento cadastrado com sucesso !');
     }
 
-    public function listAction() {
+    public function listAction() 
+    {
         $releases = Release::all();
         return view('release.list',['releases' => $releases]);
+    }
 
+    public function delete($id)
+    {
+        try{
+            Release::find($id)->delete();
+            return redirect()->route('lancamentos.list')
+            ->with('messageRegister', 'Exclusão realizada com sucesso !');
+        }catch(\Exception $e){
+            return redirect()->route('lancamentos.list')
+            ->with('messageError', 'OPS! A AÇÃO NÃO PODE SER CONCLUÍDA!');
+        }
+    }
+
+    public  function edit($id)
+    {
+        
     }
 }

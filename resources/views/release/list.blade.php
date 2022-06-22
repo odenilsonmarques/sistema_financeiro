@@ -12,6 +12,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
+                @if(session('messageError'))
+                    <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                        <strong>{{session('messageError')}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
             <table class="table table-striped table-hover">
                 <thead class="table-dark">
                     <tr>
@@ -33,8 +39,8 @@
                                 <td>{{\Carbon\Carbon::parse($release->due_date)->format('d/m/Y')}}</td>
                                 <td>{{$release->description}}</td>
                                 <td>
-                                    <a href="" class="btn btn-primary btn-sm">Editar</a>
-                                    <a href="{{route('excluir.delete',[$release->id])}}" class="btn btn-danger btn-sm">Excluir</a>
+                                    <a href="{{route('editar.editAction',[$release->id])}}" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{{route('excluir.deleteAction',[$release->id])}}" class="btn btn-danger btn-sm">Excluir</a>
                                    
                                 </td>
                             </tr>
@@ -46,8 +52,8 @@
                                 <td>{{\Carbon\Carbon::parse($release->due_date)->format('d/m/Y')}}</td>
                                 <td>{{$release->description}}</td>
                                 <td>
-                                    <a href="" class="btn btn-primary btn-sm">Editar</a>
-                                    <a href="{{route('excluir.delete',[$release->id])}}" class="btn btn-danger btn-sm">Excluir</a>
+                                    <a href="{{route('editar.editAction',[$release->id])}}" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{{route('excluir.deleteAction',[$release->id])}}" class="btn btn-danger btn-sm">Excluir</a>
                                 </td>
                             </tr>
                     <?php }
