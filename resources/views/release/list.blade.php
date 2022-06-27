@@ -39,7 +39,7 @@
                                 <td>{{\Carbon\Carbon::parse($release->due_date)->format('d/m/Y')}}</td>
                                 <td>{{$release->description}}</td>
                                 <td>
-                                    <a href="{{route('editar.editAction',[$release->id])}}" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{{route('editar.edit',[$release->id])}}" class="btn btn-primary btn-sm">Editar</a>
                                     <a href="{{route('excluir.deleteAction',[$release->id])}}" class="btn btn-danger btn-sm">Excluir</a>
                                    
                                 </td>
@@ -52,7 +52,7 @@
                                 <td>{{\Carbon\Carbon::parse($release->due_date)->format('d/m/Y')}}</td>
                                 <td>{{$release->description}}</td>
                                 <td>
-                                    <a href="{{route('editar.editAction',[$release->id])}}" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="{{route('editar.edit',[$release->id])}}" class="btn btn-primary btn-sm">Editar</a>
                                     <a href="{{route('excluir.deleteAction',[$release->id])}}" class="btn btn-danger btn-sm">Excluir</a>
                                 </td>
                             </tr>
