@@ -22,14 +22,20 @@ Route::get('/teste',function(){
 
 Route::get('/inicio','AdminController\HomeController@homePage')->name('inicio.homePage');
 
-Route::get('/lancamentos','AdminController\ReleasesController@listAction')->name('lancamentos.list');
+Route::get('/lancamentos','AdminController\ReleasesController@list')->name('lancamentos.list');
 
-Route::get('/cadastro','AdminController\ReleasesController@add');
+Route::get('/cadastro','AdminController\ReleasesController@add')->name('cadastro.add');
 
 Route::post('/cadastro','AdminController\ReleasesController@addAction')->name('cadastro.addAction');
 
 Route::get('/excluir/{id}','AdminController\ReleasesController@deleteAction')->name('excluir.deleteAction');
 
-Route::get('/editar/{id}','AdminController\ReleasesController@edit');
+
+
+
+
+
+
+Route::get('/editar/{id}','AdminController\ReleasesController@edit')->name('editar.edit');
 
 Route::post('/editar/{id}', 'AdminController\ReleasesController@editAction')->name('editar.editAction');

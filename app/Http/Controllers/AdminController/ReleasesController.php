@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Release;
 
-
 class ReleasesController extends Controller
 {
     public function add()
@@ -29,13 +28,13 @@ class ReleasesController extends Controller
         ->with('messageRegister', 'Lançamento cadastrado com sucesso !');
     }
 
-    public function listAction() 
+    public function list() 
     {
         $releases = Release::all();
         return view('release.list',['releases' => $releases]);
     }
 
-    public function delete($id)
+    public function deleteAction($id)
     {
         try{
             Release::find($id)->delete();
@@ -43,12 +42,20 @@ class ReleasesController extends Controller
             ->with('messageRegister', 'Exclusão realizada com sucesso !');
         }catch(\Exception $e){
             return redirect()->route('lancamentos.list')
-            ->with('messageError', 'OPS! A AÇÃO NÃO PODE SER CONCLUÍDA!');
+            ->with('messageError', 'Ops! a ação não pode ser realizada');
         }
     }
 
-    public  function edit($id)
+    public function edit($id)
     {
-        
+        // chamo esse array para capturar o campo escolhido através da logica implementada no form de edição. Poderia ser apenas uma select com options declarados no form de edicão, mas esse recurso me permite capturar o campo option selecionado optei por usa-lo, porem deve ter outras formas, essa forma serve para formularios de cadastros... 
+        $typeReleases = ['DESPESA', 'RECEITA'];
+        $data = Release::find($id);
+        if($data)
+        {
+            return view('release.edit',['data'=>$data,'typeReleases'=>$typeReleases]);
+        }else{
+            return redirect()->route('lancamentos.list');
+        }
     }
 }
